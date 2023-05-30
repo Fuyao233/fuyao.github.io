@@ -1,18 +1,21 @@
 site_name: Fuyao's Blog
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   language: zh
   palette: 
-    - scheme: default
-      primary: deep purple
-      accent: deep purple
+    - scheme: custom
+      primary: red
+      accent: red
       toggle:
         name: Switch to light mode
         icon: material/brightness-7
     - scheme: slate
-      primary: deep purple
-      accent: deep purple
+      primary: red
+      accent: red
       toggle:
         name: Switch to dark mode
         icon: material/brightness-4
@@ -28,18 +31,20 @@ theme:
     # - content.action.edit
     # - content.action.view
 
-repo_url: https://github.com/Alexair059/Alexair059.github.io
-repo_name: Alexair059.github.io
+repo_url: https://github.com/Fuyao233/Fuyao.github.io
+repo_name: Fuyao.github.io
 
 edit_uri: edit/main/docs/
+
+
+
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Alexair059
+      link: https://github.com/Fuyao233
       name: My Github
     - icon: fontawesome/solid/paper-plane
-      link: mailto:alexair059@gmail.com
+      link: mailto:yinghaocai@foxmail.com
       name: My Email
-
-copyright: Copyright &copy; 2020 - 2023 Alexair
+  
