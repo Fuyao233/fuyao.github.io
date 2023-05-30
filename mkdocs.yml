@@ -1,0 +1,45 @@
+site_name: Fuyao's Blog
+
+theme:
+  name: material
+  language: zh
+  palette: 
+    - scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        name: Switch to light mode
+        icon: material/brightness-7
+    - scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        name: Switch to dark mode
+        icon: material/brightness-4
+
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - toc.follow
+    # - header.autohide
+    # - content.action.edit
+    # - content.action.view
+
+repo_url: https://github.com/Alexair059/Alexair059.github.io
+repo_name: Alexair059.github.io
+
+edit_uri: edit/main/docs/
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Alexair059
+      name: My Github
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:alexair059@gmail.com
+      name: My Email
+
+copyright: Copyright &copy; 2020 - 2023 Alexair
