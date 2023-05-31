@@ -365,28 +365,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    取消代理
-  </a>
-  
-    <nav class="md-nav" aria-label="取消代理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     命令行提交修改基本指令
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
     修改git代理
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -480,28 +467,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    取消代理
-  </a>
-  
-    <nav class="md-nav" aria-label="取消代理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     命令行提交修改基本指令
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
     修改git代理
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -523,12 +497,15 @@
   
 
 
+  <h1>Git问题汇总</h1>
+
 <h4 id="failed-the-tls-connection-was-non-properly-terminated"><strong>拉取和上传出现“failed: The TLS connection was non-properly terminated”</strong></h4>
-<p>git config --global http.https://github.com.proxy socks5://127.0.0.1:1080</p>
-<h1 id="_1">取消代理</h1>
-<p>git config --global --unset http.https://github.com.proxy</p>
+<pre><code class="language-bash">git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+#取消代理
+git config --global --unset http.https://github.com.proxy
+</code></pre>
 <p>源：https://blog.csdn.net/qianbin3200896/article/details/127511105</p>
-<h4 id="_2">命令行提交修改基本指令</h4>
+<h4 id="_1">命令行提交修改基本指令</h4>
 <pre><code class="language-bash">git add .
 git commit -m&quot;info&quot;
 git push origin [branch]
