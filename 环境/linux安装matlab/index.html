@@ -510,8 +510,8 @@
 <ol>
 <li>下载</li>
 </ol>
-<p><code>bash
-   wget http://mirror.seu.edu.cn/matlab/R2015a/R2015a-glnxa64.iso</code></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>wget<span class="w"> </span>http://mirror.seu.edu.cn/matlab/R2015a/R2015a-glnxa64.iso
+</code></pre></div>
 <ol>
 <li>
 <p>解压：</p>
@@ -521,17 +521,17 @@
 <ol>
 <li>
 <p>安装7z：</p>
-<p><code>bash
- wget http://nchc.dl.sourceforge.net/project/p7zip/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2
- tar -jxvf p7zip_9.20.1_src_all.tar.bz2
- cd p7zip_9.20.1
- make
- make intall</code></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>wget<span class="w"> </span>http://nchc.dl.sourceforge.net/project/p7zip/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2
+tar<span class="w"> </span>-jxvf<span class="w"> </span>p7zip_9.20.1_src_all.tar.bz2
+<span class="nb">cd</span><span class="w"> </span>p7zip_9.20.1
+make
+make<span class="w"> </span>intall
+</code></pre></div>
 </li>
 <li>
 <p>解压</p>
-<p><code>bash
- 7z x [文件] -r -o[目标目录]</code></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>7z<span class="w"> </span>x<span class="w"> </span><span class="o">[</span>文件<span class="o">]</span><span class="w"> </span>-r<span class="w"> </span>-o<span class="o">[</span>目标目录<span class="o">]</span>
+</code></pre></div>
 <ul>
 <li>x 代表解压缩文件，并且是按原始目录解压（还有个参数 e 也是解压缩文件，但其会将所有文件都解压到根下，而不是自己原有的文件夹下）manager.7z 是压缩文件，这里大家要换成自己的。如果不在当前目录下要带上完整的目录</li>
 <li>-r 表示递归所有的子文件夹</li>
@@ -542,8 +542,8 @@
 </li>
 <li>
 <p>有权限就用mount</p>
-<p><code>bash
-  mount [文件] [目标目录] -o loop</code></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mount<span class="w"> </span><span class="o">[</span>文件<span class="o">]</span><span class="w"> </span><span class="o">[</span>目标目录<span class="o">]</span><span class="w"> </span>-o<span class="w"> </span>loop
+</code></pre></div>
 </li>
 <li>
 <p>静默安装
@@ -553,7 +553,7 @@
 <p>关联许可证</p>
 <p><img alt="image-20230610144932182" src="../linux%E5%AE%89%E8%A3%85matlab.assets/image-20230610144932182.png" /></p>
 <p>这里需要提前用教育邮箱注册账号；
-  “<strong>License Number* or Activation Key</strong>” 填 $12233-94207-95786-13322-10810$（出处：学校软件正版化安装手册）</p>
+  “<strong>License Number* or Activation Key</strong>” 填 <span class="arithmatex">\(12233-94207-95786-13322-10810\)</span>（出处：学校软件正版化安装手册）</p>
 </li>
 <li>
 <p>获取FIK和lic文件</p>
@@ -599,7 +599,9 @@
 </ol>
 </li>
 <li>
-<p>需要root权限执行 ./install </p>
+<p>在iso解压文件夹下执行</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>./install<span class="w"> </span>--inputFile<span class="w"> </span>installer<span class="w"> </span>input.txt
+</code></pre></div>
 </li>
 </ol>
 

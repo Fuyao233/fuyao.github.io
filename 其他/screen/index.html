@@ -538,28 +538,28 @@
   <h1>Screen</h1>
 
 <p>GNU <em>Screen</em>是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。Screen不可以在Windows平台上使用</p>
-<h4 id="_1">创建会话</h4>
-<pre><code class="language-bash">screen -S [会话名]
-</code></pre>
-<h4 id="_2">查看所有会话</h4>
-<pre><code class="language-bash">screen -ls
-</code></pre>
-<h4 id="_3">恢复会话</h4>
-<pre><code class="language-bash">screen -dr/-r [会话名或ID]
-</code></pre>
+<h4 id="_1">创建会话<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>screen<span class="w"> </span>-S<span class="w"> </span><span class="o">[</span>会话名<span class="o">]</span>
+</code></pre></div>
+<h4 id="_2">查看所有会话<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>screen<span class="w"> </span>-ls
+</code></pre></div>
+<h4 id="_3">恢复会话<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>screen<span class="w"> </span>-dr/-r<span class="w"> </span><span class="o">[</span>会话名或ID<span class="o">]</span>
+</code></pre></div>
 <p>注：选择”-dr“还是”-r“取决于会话是否处于”detached“的状态</p>
-<h4 id="_4">删除会话</h4>
+<h4 id="_4">删除会话<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ol>
 <li>进入会话后输入</li>
 </ol>
-<p><code>bash
-   exit</code></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">exit</span>
+</code></pre></div>
 <ol>
 <li>在screen会话外</li>
 </ol>
-<p><code>bash
-   screen -S [会话名或ID] -X quit</code></p>
-<h4 id="copy-mode">进入copy mode</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>screen<span class="w"> </span>-S<span class="w"> </span><span class="o">[</span>会话名或ID<span class="o">]</span><span class="w"> </span>-X<span class="w"> </span>quit
+</code></pre></div>
+<h4 id="copy-mode">进入copy mode<a class="headerlink" href="#copy-mode" title="Permanent link">&para;</a></h4>
 <p>作用：查看历史输出</p>
 <p>快捷键：<code>ctrl+a+[</code></p>
 <p>退出：<code>Esc</code></p>
