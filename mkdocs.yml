@@ -48,3 +48,43 @@ extra:
       link: mailto:yinghaocai@foxmail.com
       name: My Email
   
+nav:
+  - Home: index.md
+  - 环境: 
+    - Linux下安装Gecode: 环境/gecode安装.md
+    - Linux下安装Matlab: 环境/linux安装matlab.md
+    - 无root权限安装cmake: 环境/无root权限安装cmake.md
+  - 其他:
+    - Git问题汇总:  环境/git问题汇总.md
+    - Python小技巧: 其他/python.md
+    - Pytorch随笔: 其他/Pytorch.md
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.highlight:
+      auto_title: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true

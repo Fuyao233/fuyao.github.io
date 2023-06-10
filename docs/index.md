@@ -1,17 +1,6 @@
-# Welcome to MkDocs
+# Fuyao's Blog
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+最近总是在配置环境，有时再遇到之前已经解决的问题时会忘记当初是怎么解决的。此前都是将这样的“踩坑”笔记放在本机，散落在各个项目的角落，查起来不太方便。受到朋友[MZY](https://alexair059.github.io/others/blog/)的启发，决定搭建一个个人博客，一来记录，二来分享。
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
