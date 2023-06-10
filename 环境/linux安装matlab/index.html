@@ -219,7 +219,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../git%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="md-tabs__link md-tabs__link--active">
+      <a href="../gecode%E5%AE%89%E8%A3%85/" class="md-tabs__link md-tabs__link--active">
         环境
       </a>
     </li>
@@ -331,20 +331,6 @@
           环境
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="md-nav__link">
-        Git问题汇总
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -517,12 +503,104 @@
 
   <h1>Linux下安装Matlab</h1>
 
+<p><strong>os</strong>：Linux</p>
+<p><strong>安装</strong>：matlab2015a</p>
+<p><strong>权限情况</strong>：部分需要root权限</p>
+<p><strong>步骤</strong>：</p>
 <ol>
-<li>无权限解压缩iso文件（工具）；有权限就用mount</li>
-<li>静默安装</li>
-<li>获取FIK + license文件</li>
-<li>配置installer_input和active.ini</li>
-<li>需要root权限执行 ./install </li>
+<li>下载</li>
+</ol>
+<p><code>bash
+   wget http://mirror.seu.edu.cn/matlab/R2015a/R2015a-glnxa64.iso</code></p>
+<ol>
+<li>
+<p>解压：</p>
+</li>
+<li>
+<p>用7z无权限解压缩iso文件</p>
+<ol>
+<li>
+<p>安装7z：</p>
+<p><code>bash
+ wget http://nchc.dl.sourceforge.net/project/p7zip/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2
+ tar -jxvf p7zip_9.20.1_src_all.tar.bz2
+ cd p7zip_9.20.1
+ make
+ make intall</code></p>
+</li>
+<li>
+<p>解压</p>
+<p><code>bash
+ 7z x [文件] -r -o[目标目录]</code></p>
+<ul>
+<li>x 代表解压缩文件，并且是按原始目录解压（还有个参数 e 也是解压缩文件，但其会将所有文件都解压到根下，而不是自己原有的文件夹下）manager.7z 是压缩文件，这里大家要换成自己的。如果不在当前目录下要带上完整的目录</li>
+<li>-r 表示递归所有的子文件夹</li>
+<li>-o 是指定解压到的目录，这里大家要注意<strong>-o后是没有空格的直接接目录</strong> </li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>有权限就用mount</p>
+<p><code>bash
+  mount [文件] [目标目录] -o loop</code></p>
+</li>
+<li>
+<p>静默安装
+   安装的服务器没有图形化界面，只能在安装前配置好激活文件等等</p>
+</li>
+<li>
+<p>关联许可证</p>
+<p><img alt="image-20230610144932182" src="../linux%E5%AE%89%E8%A3%85matlab.assets/image-20230610144932182.png" /></p>
+<p>这里需要提前用教育邮箱注册账号；
+  “<strong>License Number* or Activation Key</strong>” 填 $12233-94207-95786-13322-10810$（出处：学校软件正版化安装手册）</p>
+</li>
+<li>
+<p>获取FIK和lic文件</p>
+<ol>
+<li>
+<p>在填完激活证密钥之后依次选择：$\text{Licences} \rightarrow \text{激活证} \rightarrow \text{Install and Activate} \rightarrow \text{Activate to Retrieve License File} \rightarrow \text{Activate a Computer} $</p>
+</li>
+<li>
+<p>依次填写安装的版本和主机信息</p>
+<p><img src="linux安装matlab.assets/image-20230610150037303.png" alt="image-20230610150037303" style="zoom: 80%;" /></p>
+<ul>
+<li><strong>Host ID：</strong>命令行输入<code>/sbin/ifconfig</code>查看，ID格式是<code>xx:xx:xx:xx:xx:xx</code>（使用指令看到很多ID，但是博主也不清楚应该选哪个，看其他教程结论是一般选<code>eno1</code>或者<code>eno2</code>，但是我在另一台服务器上安装时没有<code>eno1</code>和<code>eno2</code>）</li>
+<li><strong>Computer Login Name：</strong>命令行输入<code>hostname</code>查询</li>
+<li><strong>Activation Label：</strong>自定</li>
+</ul>
+</li>
+<li>
+<p>选择“未安装”</p>
+<p><img src="linux安装matlab.assets/image-20230610153051029.png" alt="image-20230610153051029" style="zoom:67%;" /></p>
+</li>
+<li>
+<p>下载License文件，保存File Installation Key</p>
+</li>
+</ol>
+</li>
+<li>
+<p>在iso文件解压文件夹中配置installer_input和active.ini</p>
+<ol>
+<li>installer_input：<ul>
+<li>destinationFolder：安装文件夹</li>
+<li>fileInstallationKey：FIK</li>
+<li>outputFile：自定</li>
+<li>mode：填"silent"</li>
+<li>licensePath：lic文件地址</li>
+</ul>
+</li>
+<li>activate.ini：<ul>
+<li><code>isSilent=true</code></li>
+<li><code>activateCommand=activateOffline</code></li>
+<li><code>licenseFile=[lic文件地址]</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>需要root权限执行 ./install </p>
+</li>
 </ol>
 
 
