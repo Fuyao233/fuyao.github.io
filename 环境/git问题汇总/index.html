@@ -465,6 +465,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fatal-unable-to-access-reporsitory-address-failed-to-connect-to-127001-port-7890-after-2080ms-connection-refused" class="md-nav__link">
+    Fatal: unable to access (reporsitory address) : Failed to connect to 127.0.0.1 port 7890 after 2080ms: Connection refused
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -546,6 +553,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fatal-unable-to-access-reporsitory-address-failed-to-connect-to-127001-port-7890-after-2080ms-connection-refused" class="md-nav__link">
+    Fatal: unable to access (reporsitory address) : Failed to connect to 127.0.0.1 port 7890 after 2080ms: Connection refused
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -568,7 +582,6 @@
 
 <h4 id="gnutls_handshake-failed-the-tls-connection-was-non-properly-terminated"><strong>拉取和上传出现“gnutls_handshake() failed: The TLS connection was non-properly terminated”</strong><a class="headerlink" href="#gnutls_handshake-failed-the-tls-connection-was-non-properly-terminated" title="Permanent link">&para;</a></h4>
 <div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.https://github.com.proxy<span class="w"> </span>socks5://127.0.0.1:1080
-<span class="c1">#取消代理</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>http.https://github.com.proxy
 </code></pre></div>
 <p>源：https://blog.csdn.net/qianbin3200896/article/details/127511105</p>
@@ -577,6 +590,16 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="s2">&quot;info&quot;</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>branch<span class="o">]</span>
 </code></pre></div>
+<h4 id="fatal-unable-to-access-reporsitory-address-failed-to-connect-to-127001-port-7890-after-2080ms-connection-refused">Fatal: unable to access (reporsitory address) : Failed to connect to 127.0.0.1 port 7890 after 2080ms: Connection refused<a class="headerlink" href="#fatal-unable-to-access-reporsitory-address-failed-to-connect-to-127001-port-7890-after-2080ms-connection-refused" title="Permanent link">&para;</a></h4>
+<p>经检查，这个错误出现的原因与本地端口有关系——git代理的端口与本地端口不匹配：</p>
+<p><img alt="image-20230803175124157" src="../git%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.assets/image-20230803175124157.png" /></p>
+<p>修改方法：</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.proxy<span class="w"> </span>http://127.0.0.1:17890
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>https.proxy<span class="w"> </span>http://127.0.0.1:17890
+</code></pre></div>
+<p>原因分析：某些VPN会修改本地端口号</p>
+<p>查看本地端口的方式：windows系统设置中的代理服务器设置</p>
+<p>参考链接：https://blog.csdn.net/m0_64007201/article/details/129628363</p>
 
 
 
